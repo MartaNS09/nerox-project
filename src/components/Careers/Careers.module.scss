@@ -1,10 +1,10 @@
-/* ЧИСТЫЕ И БЕЗОПАСНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ КАРЬЕРЫ */
+/* Безопасные исправления для страницы карьеры */
 
 .careersPage {
-  /* Безопасный контейнер для всей страницы */
+  /* Контейнер для всей страницы */
 }
 
-/* Карточки вакансий - БЕЗ !important */
+/* Карточки вакансий */
 .jobCard {
   background: var(--tp-common-white);
   border-radius: 16px;
@@ -20,13 +20,12 @@
   }
 }
 
-/* Темная тема - ПРАВИЛЬНО */
 [data-theme="dark"] .jobCard {
   background: var(--tp-common-black);
   border-color: var(--tp-border-1);
 }
 
-/* Заголовки - СЕМАНТИЧЕСКИ */
+/* Заголовки */
 .jobTitle {
   color: var(--tp-heading-primary);
   font-size: 1.4rem;
@@ -38,7 +37,7 @@
   color: var(--tp-common-white);
 }
 
-/* Текст - БЕЗОПАСНО */
+/* Текст */
 .jobText {
   color: var(--tp-text-body);
   font-size: 1rem;
@@ -50,7 +49,48 @@
   color: var(--tp-text-7);
 }
 
-/* Списки - ПРАВИЛЬНО */
+/* ФИКС: Кнопка с белым текстом */
+.resumeButton {
+  background: linear-gradient(135deg, var(--tp-theme-1) 0%, var(--tp-theme-2) 100%);
+  color: white !important; /* Всегда белый текст на кнопке */
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    color: white !important; /* Всегда белый при наведении */
+  }
+}
+
+/* ФИКС: Заголовок "Мы открыты к сотрудничеству" для темной темы */
+.sectionTitleDark {
+  color: var(--tp-heading-primary);
+}
+
+[data-theme="dark"] .sectionTitleDark {
+  color: #ffffff !important; /* Яркий белый для темной темы */
+  font-weight: 600;
+}
+
+/* ФИКС: Подзаголовок для темной темы */
+.sectionSubtitleDark {
+  color: var(--tp-text-body);
+}
+
+[data-theme="dark"] .sectionSubtitleDark {
+  color: #e2e8f0 !important; /* Светло-серый для лучшей читаемости */
+}
+
+/* Списки */
 .jobList {
   list-style: none;
   padding: 0;
@@ -80,28 +120,6 @@
   background: var(--tp-common-black);
 }
 
-/* Кнопка - СТИЛЬНО И БЕЗОПАСНО */
-.resumeButton {
-  background: linear-gradient(135deg, var(--tp-theme-1) 0%, var(--tp-theme-2) 100%);
-  color: white;
-  border: none;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-    color: white;
-  }
-}
-
 /* Контактная информация */
 .contactItem {
   background: rgba(102, 126, 234, 0.05);
@@ -113,21 +131,4 @@
 .contactEmail {
   color: var(--tp-theme-1);
   font-weight: 600;
-}
-
-/* Исправления для темной темы - через CSS переменные */
-.sectionTitle {
-  color: var(--tp-heading-primary);
-}
-
-.sectionSubtitle {
-  color: var(--tp-text-body);
-}
-
-[data-theme="dark"] .sectionTitle {
-  color: var(--tp-common-white);
-}
-
-[data-theme="dark"] .sectionSubtitle {
-  color: var(--tp-text-7);
 }

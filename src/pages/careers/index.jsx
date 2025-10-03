@@ -8,11 +8,7 @@ import styles from '../../components/Careers/Careers.module.scss';
 const Careers = () => {
   return (
     <div className={styles.careersPage}>
-      <SEO 
-        pageTitle="Карьера в NEROX - Присоединяйтесь к нашей команде" 
-        description="Открытые вакансии в IT компании NEROX. React разработчик, Backend разработчик, SEO специалист. Удаленная работа, интересные проекты."
-        keywords="вакансии, работа в IT, React разработчик, Backend, SEO, удаленная работа"
-      />
+      <SEO pageTitle="Карьера в NEROX" />
       <Header />
       
       {/* Hero Section */}
@@ -27,7 +23,7 @@ const Careers = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="breadcrumb__content text-center p-relative z-index-1">
-                <h1 className="breadcrumb__title">Карьера в NEROX</h1>
+                <h3 className="breadcrumb__title">Карьера в NEROX</h3>
                 <div className="breadcrumb__list">
                   <span><a href="/">Главная</a></span>
                   <span className="dvdr"><i className="fa-light fa-colon"></i></span>
@@ -46,8 +42,14 @@ const Careers = () => {
             <div className="col-xxl-12">
               <div className="section__title-wrapper-2 text-center mb-60">
                 <span className="section__title-pre-2">Вакансии</span>
-                <h2 className="section__title-2">Мы открыты к сотрудничеству</h2>
-                <p>Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами</p>
+                {/* ФИКС: Заголовок для темной темы */}
+                <h3 className={`section__title-2 ${styles.sectionTitleDark}`}>
+                  Мы открыты к сотрудничеству
+                </h3>
+                {/* ФИКС: Подзаголовок для темной темы */}
+                <p className={styles.sectionSubtitleDark}>
+                  Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами
+                </p>
               </div>
             </div>
           </div>
@@ -93,8 +95,8 @@ const Careers = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="section__title-wrapper text-center mb-60">
-                <h2 className={styles.sectionTitle}>Не нашли подходящую вакансию?</h2>
-                <p className={styles.sectionSubtitle}>
+                <h2 className={styles.sectionTitleDark}>Не нашли подходящую вакансию?</h2>
+                <p className={styles.sectionSubtitleDark}>
                   Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы обязательно рассмотрим вашу кандидатуру!
                 </p>
               </div>
@@ -115,6 +117,7 @@ const Careers = () => {
                   </div>
                 </div>
                 <div className="contact__btn mt-40">
+                  {/* ФИКС: Кнопка с белым текстом */}
                   <a href="mailto:hr@nerox.ru" className={styles.resumeButton}>
                     <span>📧</span>
                     Отправить резюме
