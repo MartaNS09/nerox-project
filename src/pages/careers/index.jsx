@@ -3,7 +3,7 @@ import SEO from '../../components/seo';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import { jobListData } from '../../data/joblistData';
-import styles from '../../styles/Careers.module.scss';
+import styles from '../../components/Careers/Careers.module.scss';
 
 const Careers = () => {
   return (

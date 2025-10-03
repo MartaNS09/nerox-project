@@ -1,0 +1,124 @@
+.careersPage {
+  /* Карточки вакансий */
+  .jobCard {
+    background: var(--card-bg, #ffffff) !important;
+    border: 1px solid var(--border-color, #e2e8f0) !important;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  }
+
+  [data-theme="dark"] .jobCard {
+    background: #2d3748 !important;
+    border-color: #4a5568 !important;
+    
+    &:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+  }
+
+  /* Тексты в карточках */
+  .jobTitle {
+    color: var(--heading-color, #1a202c) !important;
+  }
+
+  [data-theme="dark"] .jobTitle {
+    color: #ffffff !important;
+  }
+
+  .jobText {
+    color: var(--text-color, #2d3748) !important;
+  }
+
+  [data-theme="dark"] .jobText {
+    color: #e2e8f0 !important;
+  }
+
+  /* CTA секция */
+  .ctaSection {
+    background: var(--section-bg, transparent);
+  }
+
+  [data-theme="dark"] .ctaSection {
+    background: #1a202c;
+  }
+
+  .ctaTitle {
+    color: var(--heading-color, #1a202c) !important;
+  }
+
+  [data-theme="dark"] .ctaTitle {
+    color: #ffffff !important;
+  }
+
+  .ctaText {
+    color: var(--text-color, #2d3748) !important;
+  }
+
+  [data-theme="dark"] .ctaText {
+    color: #e2e8f0 !important;
+  }
+
+  /* Контактная информация */
+  .contactItem {
+    background: var(--card-bg, #f8f9fa);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color, #e2e8f0);
+  }
+
+  [data-theme="dark"] .contactItem {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .contactEmail {
+    color: var(--primary-color, #667eea) !important;
+    font-weight: 600;
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--primary-hover, #5a67d8) !important;
+    }
+  }
+
+  /* Яркая кнопка */
+  .resumeButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 15px 40px !important;
+    border-radius: 30px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    
+    &:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+      color: white !important;
+    }
+    
+    &:active {
+      transform: translateY(0) !important;
+    }
+  }
+
+  /* Анимация иконки в кнопке */
+  .buttonIcon {
+    transition: transform 0.3s ease;
+  }
+
+  .resumeButton:hover .buttonIcon {
+    transform: scale(1.2);
+  }
+}
