@@ -56,6 +56,7 @@
   transition: all 0.3s ease;
   text-decoration-thickness: 2px !important;
   text-underline-offset: 3px !important;
+  cursor: pointer !important; /* Добавляем курсор-палец */
 
   &:hover {
     color: #ba68c8 !important;
