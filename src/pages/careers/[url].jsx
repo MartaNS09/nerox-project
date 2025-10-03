@@ -1,41 +1,24 @@
 import React from 'react';
-import SEO from '../../components/seo';
-import JobDetailsArea from '../../components/Job-details/JobDetailsArea';
+import { useRouter } from 'next/router';
 import { jobListData } from '../../data/joblistData';
 
-export async function getStaticPaths() {
-  const paths = jobListData.map((job) => ({
-    params: { url: job.url },
-  }));
+const JobDetails = () => {
+  const router = useRouter();
+  const { url } = router.query;
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const joblistItem = jobListData.find(item => item.url === params.url);
+  const joblistItem = jobListData.find(item => item.url === url);
 
   if (!joblistItem) {
-    return {
-      notFound: true,
-    };
+    return <div>Вакансия не найдена</div>;
   }
 
-  return {
-    props: {
-      joblistItem,
-    },
-  };
-}
-
-const JobDetails = ({ joblistItem }) => {
   return (
-    <>
-      <SEO pageTitle={joblistItem.title} />
-      <JobDetailsArea item={joblistItem} />
-    </>
+    <div className="container">
+      <h1>{joblistItem.title}</h1>
+      <p>{joblistItem.subtitle}</p>
+      <p>Зарплата: {joblistItem.salary}</p>
+      <button onClick={() => router.back()}>Назад к вакансиям</button>
+    </div>
   );
 };
 
