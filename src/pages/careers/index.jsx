@@ -10,17 +10,24 @@ const Careers = () => {
       <SEO pageTitle="Карьера" />
       <Header />
       
-      {/* Hero Section с правильным фоном как на других страницах */}
+      {/* Hero Section - ТОЧНАЯ копия с других страниц */}
       <section className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay" 
                style={{
-                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg.jpg)'
+                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg-1.jpg)',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center', 
+                 backgroundRepeat: 'no-repeat'
                }}>
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
-              <div className="breadcrumb__content p-relative z-index-1 text-center">
+              <div className="breadcrumb__content text-center p-relative z-index-1">
                 <h3 className="breadcrumb__title">Карьера в NEROX</h3>
-                <p className="mt-20">Присоединяйтесь к нашей команде профессионалов</p>
+                <div className="breadcrumb__list">
+                  <span><a href="/">Главная</a></span>
+                  <span className="dvdr"><i className="fa-light fa-colon"></i></span>
+                  <span className="tp-current">Карьера</span>
+                </div>
               </div>
             </div>
           </div>
