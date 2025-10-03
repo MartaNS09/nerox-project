@@ -1,32 +1,41 @@
 import React from 'react';
 import SEO from '../../components/seo';
-import JobDetailsMain from '../../components/Job-details';
-import { useRouter } from 'next/router';
-import Router from 'next/router';
+import JobDetailsArea from '../../components/Job-details/JobDetailsArea';
 import { jobListData } from '../../data/joblistData';
-import { useState, useEffect } from 'react';
 
-const JobDetails = () => {
-  const router = useRouter();
-  const [joblistItem, setJoblistItem] = useState({})
-  const url = router.query.url;
-  useEffect(() => {
-    if (!url) {
+export async function getStaticPaths() {
+  const paths = jobListData.map((job) => ({
+    params: { url: job.url },
+  }));
 
-    }
-    else {
-      setJoblistItem(jobListData.find(item => item.url == url))
-    }
-  }, [url])
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const joblistItem = jobListData.find(item => item.url === params.url);
+
+  if (!joblistItem) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      joblistItem,
+    },
+  };
+}
+
+const JobDetails = ({ joblistItem }) => {
   return (
-    joblistItem
-      ?
-      <>
-        <SEO pageTitle={joblistItem.title} />
-        <JobDetailsMain item={joblistItem} />
-      </>
-      :
-      Router.push('/404')
+    <>
+      <SEO pageTitle={joblistItem.title} />
+      <JobDetailsArea item={joblistItem} />
+    </>
   );
 };
 
