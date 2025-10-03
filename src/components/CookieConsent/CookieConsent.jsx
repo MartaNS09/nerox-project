@@ -8,7 +8,8 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
+    // Показываем баннер только если куки НЕ приняты
+    if (consent !== 'accepted') {
       setShow(true);
     }
   }, []);
@@ -19,7 +20,9 @@ export default function CookieConsent() {
   };
 
   const declineCookies = () => {
-    localStorage.setItem('cookieConsent', 'declined');
+    // При отклонении либо удаляем запись, либо ставим другое значение
+    // Но баннер должен появляться снова при следующем посещении
+    localStorage.removeItem('cookieConsent'); // или localStorage.setItem('cookieConsent', 'declined');
     setShow(false);
   };
 
