@@ -2,6 +2,7 @@ import React from 'react';
 import SEO from '../../components/seo';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
+import { jobListData } from '../../data/joblistData';
 
 const Careers = () => {
   return (
@@ -9,48 +10,98 @@ const Careers = () => {
       <SEO pageTitle="Карьера" />
       <Header />
       
-      <section style={{ paddingTop: '140px', paddingBottom: '140px', textAlign: 'center', background: '#f8f9fa' }}>
+      {/* Hero Section с правильным фоном как на других страницах */}
+      <section className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay" 
+               style={{
+                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg.jpg)'
+               }}>
         <div className="container">
-          <h1>Карьера в NEROX</h1>
-          <p>Присоединяйтесь к нашей команде профессионалов</p>
+          <div className="row">
+            <div className="col-xxl-12">
+              <div className="breadcrumb__content p-relative z-index-1 text-center">
+                <h3 className="breadcrumb__title">Карьера в NEROX</h3>
+                <p className="mt-20">Присоединяйтесь к нашей команде профессионалов</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section style={{ padding: '80px 0' }}>
+      {/* Services Section */}
+      <section className="services__area-2 pt-120 pb-90">
         <div className="container">
           <div className="row">
-            <div className="col-12 text-center mb-5">
-              <h2>Открытые вакансии</h2>
+            <div className="col-xxl-12">
+              <div className="section__title-wrapper-2 text-center mb-60">
+                <span className="section__title-pre-2">Вакансии</span>
+                <h3 className="section__title-2">Мы открыты к сотрудничеству</h3>
+                <p>Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами</p>
+              </div>
             </div>
           </div>
+
           <div className="row">
-            <div className="col-md-4 mb-4">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">React разработчик</h5>
-                  <p className="card-text">Удаленная работа</p>
-                  <p>💰 от 100 000 ₽</p>
-                  <a href="#" className="btn btn-primary">Подробнее</a>
+            {jobListData.map((job, index) => (
+              <div key={index} className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                <div className="services__item-2 mb-30 transition-3 white-bg">
+                  <div className="services__content-2">
+                    <div className="services__icon-2">
+                      <span>💼</span>
+                    </div>
+                    <h3 className="services__title-2">
+                      <a href="#">{job.title}</a>
+                    </h3>
+                    <p>{job.subtitle}</p>
+                    <div className="services__list-2">
+                      <ul>
+                        <li>📍 {job.subtitle}</li>
+                        <li>🚀 Интересные проекты</li>
+                        <li>👥 Профессиональная команда</li>
+                        <li>📈 Возможности для роста</li>
+                      </ul>
+                    </div>
+                    <div className="services__btn-2">
+                      <a href="#" className="link-btn-2">
+                        Подробнее о вакансии
+                        <i className="fal fa-long-arrow-right"></i>
+                        <i className="fal fa-long-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-4 mb-4">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Backend разработчик</h5>
-                  <p className="card-text">Удаленная работа</p>
-                  <p>💰 от 110 000 ₽</p>
-                  <a href="#" className="btn btn-primary">Подробнее</a>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="contact__area pt-120 pb-120">
+        <div className="container">
+          <div className="row">
+            <div className="col-xxl-12">
+              <div className="section__title-wrapper text-center mb-60">
+                <h2 className="section__title">Не нашли подходящую вакансию?</h2>
+                <p>Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы обязательно рассмотрим вашу кандидатуру!</p>
               </div>
             </div>
-            <div className="col-md-4 mb-4">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">SEO специалист</h5>
-                  <p className="card-text">Удаленная работа</p>
-                  <p>💰 от 85 000 ₽</p>
-                  <a href="#" className="btn btn-primary">Подробнее</a>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-xxl-6 col-xl-6 col-lg-8">
+              <div className="contact__content text-center">
+                <div className="contact__info">
+                  <div className="contact__item d-flex align-items-center mb-20">
+                    <div className="contact__icon mr-15">
+                      <i className="fal fa-envelope"></i>
+                    </div>
+                    <div className="contact__text">
+                      <span>Email для резюме</span>
+                      <h5><a href="mailto:hr@nerox.ru">hr@nerox.ru</a></h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="contact__btn mt-40">
+                  <a href="mailto:hr@nerox.ru" className="tp-btn">Отправить резюме</a>
                 </div>
               </div>
             </div>
