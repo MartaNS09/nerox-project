@@ -1,92 +1,93 @@
+cat > (src / data / joblistData.js) << "EOF";
 export const jobListData = [
-    {
-        id: 1,
-        title: 'React Developer',
-        subtitle: 'Remote work',
-        url: 'react-developer',
-        salary: '$1000',
-        offer: [
-            "Work from home.",
-            "Decent pay, registration according to the Labor Code, payment for processing.",
-            "Interesting tasks that help to develop.",
-            "Career and professional growth.",
-            "Payment for literature, seminars, conferences for professional development.",
-            "Friendly team without unnecessary formalities and subordination."
-        ],
-        requirements: [
-            "Have real experience as a front-end developer for at least 3 years.",
-            "JS, HTML5, CSS3.",
-            "Experience with class components and React hooks.",
-            "Experience with Typescript, Webpack, git.",
-            "CSS - SCSS preprocessor.",
-            "To be a perfectionist in the best sense of the word. Every little thing matters, the work must not just be done, but done perfectly."
-        ]
-    },
-    {
-        id: 2,
-        title: 'Backend Developer',
-        subtitle: 'Remote work',
-        url: 'backend-developer',
-        salary: '$1100',
-        offer: [
-            "Education.",
-            "Distant work.",
-            "Friendly team.",
-            "Comfortable working conditions.",
-            "Permanent increase in Skill."
-        ],
-        requirements: [
-            "Node.js experience from 2 years.",
-            "Databases postgreSQL, MySQL, redis.",
-            "Familiarity with the infrastructure: Linux, Docker, Nginx.",
-            "Ability to work with git, build and deploy systems (gitlab, CI/CD).",
-            "Ability to evaluate the deadlines for completing tasks and comply with them, signal problems in time.",
-            "Code documentation skills.",
-            "Great desire to grow and develop professionally"
-        ]
-    },
-    {
-        id: 3,
-        title: 'SEO Specialist',
-        subtitle: 'Remote work',
-        url: 'seo-specialist',
-        salary: '$850',
-        offer: [
-            "Wide range of necessary tools and resources for successful project management.",
-            "Training at the expense of the company, attending specialized conferences held in Russia and neighboring countries.",
-            "Your own development and improvement of your skills in the field of Internet technologies and IT. You will become part of a professional and entrepreneurial team striving to become a leader in the Internet technologies market."
-        ],
-        requirements: [
-            "Understanding the basics of website building and the main channels for attracting traffic.",
-            "Experience with Key Collector, Netpeak Spider or Screaming Frog.",
-            "The ability to compose a semantic core without garbage and distribute queries into groups.",
-            "Understanding how search engines work and what are the factors that affect rankings.",
-            "Experience with buying links or other ways to get them is desirable.",
-            "Competent written Russian, the ability to express one's thoughts simply and clearly"
-        ]
-    },
-    {
-        id: 4,
-        title: 'React Native Developer',
-        subtitle: 'Remote work',
-        url: 'react-native-developer',
-        salary: '$1150',
-        offer: [
-            "Interesting job in a stable and rapidly growing company.",
-            "Young, friendly staff",
-            "Participation in large and ambitious projects.",
-            "Progressive wage system"
-        ],
-        requirements: [
-            "Strong knowledge of JavaScript ES6.",
-            "Knowledge and understanding of React / React Native and Redux.",
-            "Understanding DOM management, Virtual DOM.",
-            "Experience with client-server applications (REST API, JSON).",
-            "Practical knowledge of Git.",
-            "Experience in publishing iOS / Android applications",
-            "Understanding OOP design patterns and SOLID principles.",
-            "Ability to quickly master new technologies.",
-            "Involvement in the development of the project"
-        ]
-    }
-]
+  {
+    id: 1,
+    title: "React разработчик",
+    subtitle: "Удаленная работа",
+    url: "react-razrabotchik",
+    salary: "от 100 000 ₽",
+    offer: [
+      "Работа из дома",
+      "Интересные задачи для профессионального развития",
+      "Карьерный и профессиональный рост",
+      "Оплата литературы, семинаров, конференций",
+      "Дружный коллектив без лишних формальностей",
+    ],
+    requirements: [
+      "Опыт работы front-end разработчиком от 3 лет",
+      "Глубокие знания JavaScript, HTML5, CSS3",
+      "Опыт работы с классовыми компонентами и React hooks",
+      "Опыт с Typescript, Webpack, git",
+      "CSS препроцессоры (SCSS)",
+      "Внимание к деталям и стремление к совершенству",
+    ],
+  },
+  {
+    id: 2,
+    title: "Backend разработчик",
+    subtitle: "Удаленная работа",
+    url: "backend-razrabotchik",
+    salary: "от 110 000 ₽",
+    offer: [
+      "Обучение и профессиональное развитие",
+      "Удаленный формат работы",
+      "Дружный коллектив",
+      "Комфортные условия труда",
+      "Постоянное повышение квалификации",
+    ],
+    requirements: [
+      "Опыт работы с Node.js от 2 лет",
+      "Базы данных: PostgreSQL, MySQL, Redis",
+      "Знание инфраструктуры: Linux, Docker, Nginx",
+      "Опыт работы с git, системами сборки и деплоя",
+      "Умение оценивать сроки выполнения задач",
+      "Навыки документирования кода",
+      "Желание расти и развиваться профессионально",
+    ],
+  },
+  {
+    id: 3,
+    title: "SEO специалист",
+    subtitle: "Удаленная работа",
+    url: "seo-specialist",
+    salary: "от 85 000 ₽",
+    offer: [
+      "Широкий набор инструментов для успешного управления проектами",
+      "Обучение за счет компании, посещение конференций",
+      "Профессиональное развитие в сфере интернет-технологий",
+      "Работа в профессиональной и предпринимательской команде",
+    ],
+    requirements: [
+      "Понимание основ веб-разработки и каналов привлечения трафика",
+      "Опыт работы с Key Collector, Netpeak Spider или Screaming Frog",
+      "Умение составлять семантическое ядро и распределять запросы",
+      "Понимание принципов работы поисковых систем",
+      "Опыт работы с покупкой ссылок или другими способами их получения",
+      "Грамотный письменный русский язык",
+    ],
+  },
+  {
+    id: 4,
+    title: "React Native разработчик",
+    subtitle: "Удаленная работа",
+    url: "react-native-razrabotchik",
+    salary: "от 115 000 ₽",
+    offer: [
+      "Интересная работа в стабильной и растущей компании",
+      "Молодой и дружный коллектив",
+      "Участие в крупных и амбициозных проектах",
+      "Прогрессивная система оплаты труда",
+    ],
+    requirements: [
+      "Глубокие знания JavaScript ES6+",
+      "Опыт работы с React / React Native и Redux",
+      "Понимание управления DOM, Virtual DOM",
+      "Опыт работы с клиент-серверными приложениями",
+      "Практические знания Git",
+      "Опыт публикации приложений iOS/Android",
+      "Понимание принципов ООП и SOLID",
+      "Способность быстро осваивать новые технологии",
+    ],
+  },
+];
+EOF;
