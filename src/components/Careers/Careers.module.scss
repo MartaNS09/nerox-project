@@ -49,10 +49,11 @@
   color: var(--tp-text-7);
 }
 
-/* ФИКС: Кнопка с белым текстом */
+/* ФИКС: СТИЛЬНАЯ КНОПКА как на сайте */
 .resumeButton {
-  background: linear-gradient(135deg, var(--tp-theme-1) 0%, var(--tp-theme-2) 100%);
-  color: white !important; /* Всегда белый текст на кнопке */
+  /* Градиент как на основном сайте */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
   border: none;
   padding: 16px 40px;
   border-radius: 50px;
@@ -63,11 +64,33 @@
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-    color: white !important; /* Всегда белый при наведении */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    color: white !important;
+  }
+  
+  /* Анимация иконки */
+  span {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover span {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+/* Альтернативный вариант кнопки - если нужен другой стиль */
+.tpBtnAlternative {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid #667eea;
+  
+  &:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
   }
 }
 
@@ -77,7 +100,7 @@
 }
 
 [data-theme="dark"] .sectionTitleDark {
-  color: #ffffff !important; /* Яркий белый для темной темы */
+  color: #ffffff !important;
   font-weight: 600;
 }
 
@@ -87,7 +110,7 @@
 }
 
 [data-theme="dark"] .sectionSubtitleDark {
-  color: #e2e8f0 !important; /* Светло-серый для лучшей читаемости */
+  color: #e2e8f0 !important;
 }
 
 /* Списки */
@@ -131,4 +154,16 @@
 .contactEmail {
   color: var(--tp-theme-1);
   font-weight: 600;
+}
+
+/* Убедимся что кнопка переопределяет стандартные стили */
+.contact__btn .resumeButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.contact__btn .resumeButton:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  color: white !important;
 }

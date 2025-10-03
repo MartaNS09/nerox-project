@@ -42,11 +42,9 @@ const Careers = () => {
             <div className="col-xxl-12">
               <div className="section__title-wrapper-2 text-center mb-60">
                 <span className="section__title-pre-2">Вакансии</span>
-                {/* ФИКС: Заголовок для темной темы */}
                 <h3 className={`section__title-2 ${styles.sectionTitleDark}`}>
                   Мы открыты к сотрудничеству
                 </h3>
-                {/* ФИКС: Подзаголовок для темной темы */}
                 <p className={styles.sectionSubtitleDark}>
                   Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами
                 </p>
@@ -117,7 +115,7 @@ const Careers = () => {
                   </div>
                 </div>
                 <div className="contact__btn mt-40">
-                  {/* ФИКС: Кнопка с белым текстом */}
+                  {/* КРАСИВАЯ КНОПКА С ФИОЛЕТОВЫМ ГРАДИЕНТОМ */}
                   <a href="mailto:hr@nerox.ru" className={styles.resumeButton}>
                     <span>📧</span>
                     Отправить резюме
