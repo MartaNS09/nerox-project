@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import React from 'react';
 import SEO from '../../components/seo';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
@@ -10,7 +10,7 @@ const Careers = () => {
       <SEO pageTitle="Карьера" />
       <Header />
       
-      {/* Hero Section - точная копия других страниц */}
+      {/* Hero Section */}
       <section className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay" 
                style={{
                  backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg.jpg)'
@@ -27,7 +27,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Services Section - стиль как на главной */}
+      {/* Services Section */}
       <section className="services__area-2 pt-120 pb-90">
         <div className="container">
           <div className="row">
@@ -112,4 +112,4 @@ const Careers = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Careers), { ssr: false });
+export default Careers;
