@@ -1,205 +1,133 @@
+/* ЧИСТЫЕ И БЕЗОПАСНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ КАРЬЕРЫ */
+
 .careersPage {
-  /* Сильно исправляем заголовки в темной теме */
-  .section__title-2,
-  .section__title {
-    color: var(--heading-color, #1a202c) !important;
-  }
+  /* Безопасный контейнер для всей страницы */
+}
 
-  [data-theme="dark"] .section__title-2,
-  [data-theme="dark"] .section__title {
-    color: #ffffff !important;
+/* Карточки вакансий - БЕЗ !important */
+.jobCard {
+  background: var(--tp-common-white);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--tp-border-1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
   }
+}
 
-  /* Сильно исправляем обычный текст в темной теме */
-  .section__title-wrapper-2 p,
-  .section__title-wrapper p {
-    color: var(--text-color, #2d3748) !important;
-  }
+/* Темная тема - ПРАВИЛЬНО */
+[data-theme="dark"] .jobCard {
+  background: var(--tp-common-black);
+  border-color: var(--tp-border-1);
+}
 
-  [data-theme="dark"] .section__title-wrapper-2 p,
-  [data-theme="dark"] .section__title-wrapper p {
-    color: #e2e8f0 !important;
-  }
+/* Заголовки - СЕМАНТИЧЕСКИ */
+.jobTitle {
+  color: var(--tp-heading-primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 
-  /* Карточки вакансий - убираем белый фон, добавляем скругления */
-  .jobCard {
-    background: var(--card-bg, #ffffff) !important;
-    border: 1px solid var(--border-color, #e2e8f0) !important;
-    border-radius: 12px !important;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-  }
+[data-theme="dark"] .jobTitle {
+  color: var(--tp-common-white);
+}
 
-  [data-theme="dark"] .jobCard {
-    background: #2d3748 !important;
-    border-color: #4a5568 !important;
-    
-    &:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-  }
+/* Текст - БЕЗОПАСНО */
+.jobText {
+  color: var(--tp-text-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
 
-  /* АГРЕССИВНО убираем точки в списках - переопределяем UI kit */
-  .services__list-2 ul,
-  .services__list-2 ul li,
-  .services__content-2 ul,
-  .services__content-2 ul li {
-    list-style: none !important;
-    list-style-type: none !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    background: none !important;
-  }
+[data-theme="dark"] .jobText {
+  color: var(--tp-text-7);
+}
 
-  .services__list-2 ul li::before,
-  .services__content-2 ul li::before {
-    content: "" !important;
-    display: none !important;
-  }
+/* Списки - ПРАВИЛЬНО */
+.jobList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .services__list-2 ul,
-  .services__content-2 ul {
-    padding: 0 !important;
-    margin: 0 !important;
+.jobListItem {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  
+  &::before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    color: var(--tp-theme-1);
+    font-weight: bold;
   }
+}
 
-  .services__list-2 ul li,
-  .services__content-2 ul li {
-    border: none !important;
-    padding: 8px 0 !important;
-    margin: 0 !important;
-    position: relative;
-  }
+/* CTA секция */
+.ctaSection {
+  background: var(--tp-grey-2);
+}
 
-  /* Тексты в карточках */
-  .jobTitle {
-    color: var(--heading-color, #1a202c) !important;
-  }
+[data-theme="dark"] .ctaSection {
+  background: var(--tp-common-black);
+}
 
-  [data-theme="dark"] .jobTitle {
-    color: #ffffff !important;
+/* Кнопка - СТИЛЬНО И БЕЗОПАСНО */
+.resumeButton {
+  background: linear-gradient(135deg, var(--tp-theme-1) 0%, var(--tp-theme-2) 100%);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    color: white;
   }
+}
 
-  .jobText {
-    color: var(--text-color, #2d3748) !important;
-  }
+/* Контактная информация */
+.contactItem {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
 
-  [data-theme="dark"] .jobText {
-    color: #e2e8f0 !important;
-  }
+.contactEmail {
+  color: var(--tp-theme-1);
+  font-weight: 600;
+}
 
-  /* CTA секция - УСИЛИВАЕМ стили для текста */
-  .ctaSection {
-    background: var(--section-bg, transparent) !important;
-  }
+/* Исправления для темной темы - через CSS переменные */
+.sectionTitle {
+  color: var(--tp-heading-primary);
+}
 
-  [data-theme="dark"] .ctaSection {
-    background: #1a202c !important;
-  }
+.sectionSubtitle {
+  color: var(--tp-text-body);
+}
 
-  .ctaTitle {
-    color: var(--heading-color, #1a202c) !important;
-  }
+[data-theme="dark"] .sectionTitle {
+  color: var(--tp-common-white);
+}
 
-  [data-theme="dark"] .ctaTitle {
-    color: #ffffff !important;
-  }
-
-  .ctaText {
-    color: var(--text-color, #2d3748) !important;
-  }
-
-  [data-theme="dark"] .ctaText {
-    color: #e2e8f0 !important;
-  }
-
-  /* УСИЛИВАЕМ заголовок "Мы открыты к сотрудничеству" */
-  .section__title-wrapper-2 .section__title-2 {
-    color: var(--heading-color, #1a202c) !important;
-  }
-
-  [data-theme="dark"] .section__title-wrapper-2 .section__title-2 {
-    color: #ffffff !important;
-  }
-
-  .section__title-wrapper-2 p {
-    color: var(--text-color, #2d3748) !important;
-  }
-
-  [data-theme="dark"] .section__title-wrapper-2 p {
-    color: #e2e8f0 !important;
-  }
-
-  /* Контактная информация */
-  .contactItem {
-    background: var(--card-bg, #f8f9fa);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid var(--border-color, #e2e8f0);
-  }
-
-  [data-theme="dark"] .contactItem {
-    background: #2d3748;
-    border-color: #4a5568;
-  }
-
-  .contactEmail {
-    color: var(--primary-color, #667eea) !important;
-    font-weight: 600;
-    text-decoration: none;
-    
-    &:hover {
-      color: var(--primary-hover, #5a67d8) !important;
-    }
-  }
-
-  /* Яркая кнопка */
-  .resumeButton {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    border: none !important;
-    color: white !important;
-    font-weight: 600 !important;
-    padding: 15px 40px !important;
-    border-radius: 30px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
-    position: relative;
-    overflow: hidden;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    
-    &:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
-      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
-      color: white !important;
-    }
-    
-    &:active {
-      transform: translateY(0) !important;
-    }
-  }
-
-  /* Анимация иконки в кнопке */
-  .buttonIcon {
-    transition: transform 0.3s ease;
-  }
-
-  .resumeButton:hover .buttonIcon {
-    transform: scale(1.2);
-  }
-
-  /* Исправляем заголовок "Вакансии" */
-  .section__title-pre-2 {
-    color: var(--primary-color, #667eea) !important;
-  }
-
-  [data-theme="dark"] .section__title-pre-2 {
-    color: #667eea !important;
-  }
+[data-theme="dark"] .sectionSubtitle {
+  color: var(--tp-text-7);
 }

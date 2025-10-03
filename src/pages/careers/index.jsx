@@ -8,7 +8,11 @@ import styles from '../../components/Careers/Careers.module.scss';
 const Careers = () => {
   return (
     <div className={styles.careersPage}>
-      <SEO pageTitle="Карьера" />
+      <SEO 
+        pageTitle="Карьера в NEROX - Присоединяйтесь к нашей команде" 
+        description="Открытые вакансии в IT компании NEROX. React разработчик, Backend разработчик, SEO специалист. Удаленная работа, интересные проекты."
+        keywords="вакансии, работа в IT, React разработчик, Backend, SEO, удаленная работа"
+      />
       <Header />
       
       {/* Hero Section */}
@@ -23,7 +27,7 @@ const Careers = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="breadcrumb__content text-center p-relative z-index-1">
-                <h3 className="breadcrumb__title">Карьера в NEROX</h3>
+                <h1 className="breadcrumb__title">Карьера в NEROX</h1>
                 <div className="breadcrumb__list">
                   <span><a href="/">Главная</a></span>
                   <span className="dvdr"><i className="fa-light fa-colon"></i></span>
@@ -35,14 +39,14 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Вакансии Section */}
       <section className="services__area-2 pt-120 pb-90">
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
               <div className="section__title-wrapper-2 text-center mb-60">
                 <span className="section__title-pre-2">Вакансии</span>
-                <h3 className="section__title-2">Мы открыты к сотрудничеству</h3>
+                <h2 className="section__title-2">Мы открыты к сотрудничеству</h2>
                 <p>Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами</p>
               </div>
             </div>
@@ -56,18 +60,18 @@ const Careers = () => {
                     <div className="services__icon-2">
                       <span>💼</span>
                     </div>
-                    <h3 className={`services__title-2 ${styles.jobTitle}`}>
-                      <a href="#">{job.title}</a>
+                    <h3 className={styles.jobTitle}>
+                      {job.title}
                     </h3>
                     <p className={styles.jobText}>{job.subtitle}</p>
-                    <div className="services__list-2">
-                      <ul>
-                        <li className={styles.jobText}>📍 {job.subtitle}</li>
-                        <li className={styles.jobText}>🚀 Интересные проекты</li>
-                        <li className={styles.jobText}>👥 Профессиональная команда</li>
-                        <li className={styles.jobText}>📈 Возможности для роста</li>
-                      </ul>
-                    </div>
+                    
+                    <ul className={styles.jobList}>
+                      <li className={styles.jobListItem}>📍 {job.subtitle}</li>
+                      <li className={styles.jobListItem}>🚀 Интересные проекты</li>
+                      <li className={styles.jobListItem}>👥 Профессиональная команда</li>
+                      <li className={styles.jobListItem}>📈 Возможности для роста</li>
+                    </ul>
+                    
                     <div className="services__btn-2">
                       <a href="#" className="link-btn-2">
                         Подробнее о вакансии
@@ -89,8 +93,10 @@ const Careers = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="section__title-wrapper text-center mb-60">
-                <h2 className={`section__title ${styles.ctaTitle}`}>Не нашли подходящую вакансию?</h2>
-                <p className={styles.ctaText}>Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы обязательно рассмотрим вашу кандидатуру!</p>
+                <h2 className={styles.sectionTitle}>Не нашли подходящую вакансию?</h2>
+                <p className={styles.sectionSubtitle}>
+                  Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы обязательно рассмотрим вашу кандидатуру!
+                </p>
               </div>
             </div>
           </div>
@@ -110,7 +116,7 @@ const Careers = () => {
                 </div>
                 <div className="contact__btn mt-40">
                   <a href="mailto:hr@nerox.ru" className={styles.resumeButton}>
-                    <span className={styles.buttonIcon}>📧</span>
+                    <span>📧</span>
                     Отправить резюме
                   </a>
                 </div>
