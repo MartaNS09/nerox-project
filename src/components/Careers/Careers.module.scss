@@ -1,5 +1,5 @@
 .careersPage {
-  /* Исправляем заголовки в темной теме */
+  /* Сильно исправляем заголовки в темной теме */
   .section__title-2,
   .section__title {
     color: var(--heading-color, #1a202c) !important;
@@ -10,7 +10,7 @@
     color: #ffffff !important;
   }
 
-  /* Исправляем обычный текст в темной теме */
+  /* Сильно исправляем обычный текст в темной теме */
   .section__title-wrapper-2 p,
   .section__title-wrapper p {
     color: var(--text-color, #2d3748) !important;
@@ -25,7 +25,7 @@
   .jobCard {
     background: var(--card-bg, #ffffff) !important;
     border: 1px solid var(--border-color, #e2e8f0) !important;
-    border-radius: 12px !important; /* Добавляем скругления */
+    border-radius: 12px !important;
     transition: all 0.3s ease;
     
     &:hover {
@@ -43,19 +43,36 @@
     }
   }
 
-  /* Убираем черные рамки и точки в списках */
-  .services__list-2 ul {
-    list-style: none !important; /* Убираем точки */
-    padding-left: 0 !important; /* Убираем отступ слева */
-    margin-bottom: 0 !important;
+  /* АГРЕССИВНО убираем точки в списках - переопределяем UI kit */
+  .services__list-2 ul,
+  .services__list-2 ul li,
+  .services__content-2 ul,
+  .services__content-2 ul li {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    background: none !important;
   }
 
-  .services__list-2 ul li {
-    border: none !important; /* Убираем границы */
+  .services__list-2 ul li::before,
+  .services__content-2 ul li::before {
+    content: "" !important;
+    display: none !important;
+  }
+
+  .services__list-2 ul,
+  .services__content-2 ul {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .services__list-2 ul li,
+  .services__content-2 ul li {
+    border: none !important;
     padding: 8px 0 !important;
     margin: 0 !important;
     position: relative;
-    padding-left: 0 !important; /* Убираем отступ для точек */
   }
 
   /* Тексты в карточках */
@@ -75,13 +92,13 @@
     color: #e2e8f0 !important;
   }
 
-  /* CTA секция */
+  /* CTA секция - УСИЛИВАЕМ стили для текста */
   .ctaSection {
-    background: var(--section-bg, transparent);
+    background: var(--section-bg, transparent) !important;
   }
 
   [data-theme="dark"] .ctaSection {
-    background: #1a202c;
+    background: #1a202c !important;
   }
 
   .ctaTitle {
@@ -97,6 +114,23 @@
   }
 
   [data-theme="dark"] .ctaText {
+    color: #e2e8f0 !important;
+  }
+
+  /* УСИЛИВАЕМ заголовок "Мы открыты к сотрудничеству" */
+  .section__title-wrapper-2 .section__title-2 {
+    color: var(--heading-color, #1a202c) !important;
+  }
+
+  [data-theme="dark"] .section__title-wrapper-2 .section__title-2 {
+    color: #ffffff !important;
+  }
+
+  .section__title-wrapper-2 p {
+    color: var(--text-color, #2d3748) !important;
+  }
+
+  [data-theme="dark"] .section__title-wrapper-2 p {
     color: #e2e8f0 !important;
   }
 
