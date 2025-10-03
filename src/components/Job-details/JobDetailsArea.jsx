@@ -1,150 +1,109 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import ErrorMsg from "../common/ErrorMsg";
+import React, { useState } from 'react';
 
 const JobDetailsArea = ({ item }) => {
-  const handleOnSubmit = (values, { resetForm }) => {
-    alert(`${values.name + "\n" + values.email + "\n" + values.msg}`);
-    resetForm();
-  };
-  const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
-    useFormik({
-      initialValues: {
-        name: "",
-        email: "",
-        subject: "",
-        msg: "",
-      },
-      validationSchema: Yup.object().shape({
-        name: Yup.string().required("Обязательное поле").label("Имя"),
-        email: Yup.string()
-          .required("Обязательное поле")
-          .email()
-          .label("Email"),
-        msg: Yup.string()
-          .required("Обязательное поле")
-          .min(20)
-          .label("Сообщение"),
-      }),
-      onSubmit: handleOnSubmit,
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    msg: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Заявка отправлена!\nИмя: ${formData.name}\nEmail: ${formData.email}\nСообщение: ${formData.msg}`);
+    setFormData({ name: '', email: '', subject: '', msg: '' });
+  };
+
+  if (!item) {
+    return <div>Вакансия не найдена</div>;
+  }
+
   return (
-    <>
-      <div className="job-details-area pt-130 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6 col-lg-6">
-              <div className="job-details-content">
-                <h5 className="job-dtitle mt-45 mb-15">{item.title}</h5>
-                <span className="job-sm-dtitle">{item.subtitle} </span>
-                <div className="job-dtext-wrapper mt-50">
-                  <p>
-                    Мы ищем {item.title.toLowerCase()} в нашу команду из 14
-                    человек.
-                  </p>
-                  <p className="job-dtext mt-25">
-                    Наша цель - создавать продукты мирового класса, повышать
-                    уровень поддержки и производительности, которые мы
-                    предоставляем нашим клиентам.
-                  </p>
-                </div>
-                <div className="job-feature-list mt-30">
+    <div className="job-details-area">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8">
+            <div className="job-details-content">
+              <h1>{item.title}</h1>
+              <p className="job-subtitle">{item.subtitle}</p>
+              <p className="job-salary">Зарплата: {item.salary}</p>
+              
+              {item.offer && (
+                <div className="job-offer">
+                  <h3>Что мы предлагаем:</h3>
                   <ul>
-                    {item.offer?.map((el, id) => (
-                      <li key={id}>
-                        <i className="fa-solid fa-circle-check"></i>
-                        {el}
-                      </li>
+                    {item.offer.map((point, index) => (
+                      <li key={index}>{point}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="job-feature-image w-img mt-55 mb-55">
-                  <img
-                    src="../../assets/img/about/job-dimg.jpg"
-                    alt="job-details-img"
-                  />
-                </div>
-                <h5 className="privacy-title mb-20">Мы ожидаем от вас:</h5>
-                <div className="job-feature-list job-feature-list-2 mt-40">
+              )}
+
+              {item.requirements && (
+                <div className="job-requirements">
+                  <h3>Требования:</h3>
                   <ul>
-                    {item.requirements?.map((el, id) => (
-                      <li key={id}>
-                        <i className="fa-solid fa-circle-check"></i>
-                        {el}
-                      </li>
+                    {item.requirements.map((req, index) => (
+                      <li key={index}>{req}</li>
                     ))}
                   </ul>
                 </div>
-                <h5 className="privacy-title mb-20 mt-60">О компании</h5>
-                <p>
-                  Наша миссия - искать и находить: точки роста,
-                  причинно-следственные связи, перспективные проекты,
-                  талантливых людей. Мы растем вместе с клиентами и строим нашу
-                  общую историю успеха. Мы анализируем каждый пиксель, байт и
-                  символ. Просеиваем бизнес-модели и решения через сито здравого
-                  смысла. Говорим все как есть.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6">
-              <div className="job-details-contact mt-50 mb-20">
-                <div className="contact__form">
-                  <form onSubmit={handleSubmit}>
-                    <div className="row">
-                      <div className="col-xxl-12">
-                        <div className="contact__form-input">
-                          <input
-                            id="name"
-                            value={values.name}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            type="text"
-                            placeholder="Ваше имя"
-                          />
-                          {touched.name && <ErrorMsg error={errors.name} />}
-                        </div>
-                      </div>
-                      <div className="col-xxl-12">
-                        <div className="contact__form-input">
-                          <input
-                            id="email"
-                            value={values.email}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            type="email"
-                            placeholder="Email"
-                          />
-                          {touched.email && <ErrorMsg error={errors.email} />}
-                        </div>
-                      </div>
-                      <div className="col-xxl-12">
-                        <div className="contact__form-input">
-                          <textarea
-                            id="msg"
-                            value={values.msg}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            placeholder="Расскажите о себе и опыте"
-                          ></textarea>
-                          {touched.msg && <ErrorMsg error={errors.msg} />}
-                        </div>
-                      </div>
-                      <div className="col-xxl-12">
-                        <div className="contact__btn">
-                          <button className="tp-solid-btn">
-                            Отправить отклик
-                          </button>
-                        </div>
-                      </div>
+              )}
+
+              <div className="job-apply-form">
+                <h3>Откликнуться на вакансию</h3>
+                <form onSubmit={handleSubmit}>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Ваше имя"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
                     </div>
-                  </form>
-                </div>
+                    <div className="col-md-6">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Ваш email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="col-12">
+                      <textarea
+                        name="msg"
+                        placeholder="Ваше сообщение"
+                        value={formData.msg}
+                        onChange={handleChange}
+                        rows="5"
+                        required
+                      ></textarea>
+                    </div>
+                    <div className="col-12">
+                      <button type="submit" className="common-btn">
+                        Отправить заявку
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
