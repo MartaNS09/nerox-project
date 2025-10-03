@@ -1,8 +1,41 @@
 import React from 'react';
 import Link from 'next/link';
 import SEO from '../../components/seo';
-import Header from '../../components/Layout/Header';
-import Footer from '../../components/Layout/Footer';
+
+// Проверим правильные импорты для Header/Footer
+const Header = () => (
+  <header style={{padding: '20px 0', background: '#fff', borderBottom: '1px solid #eee'}}>
+    <div className="container">
+      <div className="row align-items-center">
+        <div className="col-lg-12">
+          <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <Link href="/" style={{fontSize: '24px', fontWeight: 'bold', color: '#333', textDecoration: 'none'}}>
+              NEROX
+            </Link>
+            <div style={{display: 'flex', gap: '30px'}}>
+              <Link href="/" style={{color: '#333', textDecoration: 'none'}}>Главная</Link>
+              <Link href="/services" style={{color: '#333', textDecoration: 'none'}}>Услуги</Link>
+              <Link href="/careers" style={{color: '#667eea', textDecoration: 'none', fontWeight: 'bold'}}>Карьера</Link>
+              <Link href="/contact" style={{color: '#333', textDecoration: 'none'}}>Контакты</Link>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
+const Footer = () => (
+  <footer style={{padding: '40px 0', background: '#f8f9fa', marginTop: '50px'}}>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12 text-center">
+          <p>&copy; 2024 NEROX. Все права защищены.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+);
 
 export default function Careers() {
   const positions = [
@@ -38,22 +71,14 @@ export default function Careers() {
       <Header />
       
       {/* Хлебные крошки */}
-      <section className="breadcrumb-area breadcrumb-bg" style={{padding: '40px 0', background: '#f5f5f5'}}>
+      <section style={{padding: '30px 0', background: '#f5f5f5'}}>
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="breadcrumb-content">
-                <h2 className="title">Карьера</h2>
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <Link href="/">Главная</Link>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      Карьера
-                    </li>
-                  </ol>
-                </nav>
+              <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+                <Link href="/" style={{color: '#667eea', textDecoration: 'none'}}>Главная</Link>
+                <span style={{color: '#999'}}>/</span>
+                <span style={{color: '#333'}}>Карьера</span>
               </div>
             </div>
           </div>
@@ -61,15 +86,15 @@ export default function Careers() {
       </section>
 
       {/* Герой секция */}
-      <section className="career-hero-area" style={{padding: '100px 0', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
+      <section style={{padding: '80px 0', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="career-hero-content text-center">
-                <h1 className="title" style={{color: 'white', fontSize: '3.5rem', marginBottom: '20px', fontWeight: '700'}}>
+            <div className="col-lg-10">
+              <div style={{textAlign: 'center', color: 'white'}}>
+                <h1 style={{fontSize: '3rem', marginBottom: '20px', fontWeight: '700'}}>
                   Карьера в NEROX
                 </h1>
-                <p className="text" style={{color: 'rgba(255,255,255,0.9)', fontSize: '1.3rem', lineHeight: '1.6'}}>
+                <p style={{fontSize: '1.3rem', lineHeight: '1.6', opacity: '0.9'}}>
                   Присоединяйтесь к нашей команде профессионалов и создавайте инновационные digital-решения вместе с нами. 
                   Мы ценим талант, стремимся к excellence и создаем продукты, которые меняют мир к лучшему.
                 </p>
@@ -80,36 +105,36 @@ export default function Careers() {
       </section>
 
       {/* Почему мы */}
-      <section className="why-us-area" style={{padding: '80px 0'}}>
+      <section style={{padding: '80px 0'}}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="section-title text-center">
-                <h2 className="title">Почему выбирают NEROX?</h2>
-                <p>Мы создаем условия для профессионального роста и реализации амбициозных проектов</p>
+              <div style={{textAlign: 'center', marginBottom: '50px'}}>
+                <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: '#333'}}>Почему выбирают NEROX?</h2>
+                <p style={{fontSize: '1.2rem', color: '#666'}}>Мы создаем условия для профессионального роста и реализации амбициозных проектов</p>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-4 col-md-6">
-              <div className="why-us-item text-center" style={{padding: '40px 30px', marginBottom: '30px'}}>
-                <div className="icon" style={{fontSize: '3rem', marginBottom: '20px', color: '#667eea'}}>🚀</div>
-                <h4>Инновационные проекты</h4>
-                <p>Работайте над современными технологическими решениями и digital-продуктами</p>
+              <div style={{textAlign: 'center', padding: '40px 20px', marginBottom: '30px'}}>
+                <div style={{fontSize: '3rem', marginBottom: '20px'}}>🚀</div>
+                <h4 style={{marginBottom: '15px', color: '#333'}}>Инновационные проекты</h4>
+                <p style={{color: '#666', lineHeight: '1.6'}}>Работайте над современными технологическими решениями и digital-продуктами</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
-              <div className="why-us-item text-center" style={{padding: '40px 30px', marginBottom: '30px'}}>
-                <div className="icon" style={{fontSize: '3rem', marginBottom: '20px', color: '#667eea'}}>👥</div>
-                <h4>Сильная команда</h4>
-                <p>Опытные специалисты, готовые делиться знаниями и поддерживать в развитии</p>
+              <div style={{textAlign: 'center', padding: '40px 20px', marginBottom: '30px'}}>
+                <div style={{fontSize: '3rem', marginBottom: '20px'}}>👥</div>
+                <h4 style={{marginBottom: '15px', color: '#333'}}>Сильная команда</h4>
+                <p style={{color: '#666', lineHeight: '1.6'}}>Опытные специалисты, готовые делиться знаниями и поддерживать в развитии</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
-              <div className="why-us-item text-center" style={{padding: '40px 30px', marginBottom: '30px'}}>
-                <div className="icon" style={{fontSize: '3rem', marginBottom: '20px', color: '#667eea'}}>💼</div>
-                <h4>Гибкий график</h4>
-                <p>Удаленная работа и гибкий подход к организации рабочего процесса</p>
+              <div style={{textAlign: 'center', padding: '40px 20px', marginBottom: '30px'}}>
+                <div style={{fontSize: '3rem', marginBottom: '20px'}}>💼</div>
+                <h4 style={{marginBottom: '15px', color: '#333'}}>Гибкий график</h4>
+                <p style={{color: '#666', lineHeight: '1.6'}}>Удаленная работа и гибкий подход к организации рабочего процесса</p>
               </div>
             </div>
           </div>
@@ -117,20 +142,20 @@ export default function Careers() {
       </section>
 
       {/* Направления работы */}
-      <section className="positions-area" style={{padding: '80px 0', background: '#f8f9fa'}}>
+      <section style={{padding: '80px 0', background: '#f8f9fa'}}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="section-title text-center">
-                <h2 className="title">Мы ищем таланты</h2>
-                <p>Присоединяйтесь к нам в одном из направлений или предложите свою экспертизу</p>
+              <div style={{textAlign: 'center', marginBottom: '50px'}}>
+                <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: '#333'}}>Мы ищем таланты</h2>
+                <p style={{fontSize: '1.2rem', color: '#666'}}>Присоединяйтесь к нам в одном из направлений или предложите свою экспертизу</p>
               </div>
             </div>
           </div>
           <div className="row">
             {positions.map((position, index) => (
               <div key={index} className="col-lg-6">
-                <div className="position-item" style={{
+                <div style={{
                   background: 'white',
                   padding: '30px',
                   marginBottom: '30px',
@@ -138,7 +163,7 @@ export default function Careers() {
                   boxShadow: '0 5px 15px rgba(0,0,0,0.08)',
                   borderLeft: '4px solid #667eea'
                 }}>
-                  <h4 style={{color: '#333', marginBottom: '15px'}}>{position.title}</h4>
+                  <h4 style={{color: '#333', marginBottom: '15px', fontSize: '1.3rem'}}>{position.title}</h4>
                   <p style={{color: '#666', lineHeight: '1.6'}}>{position.description}</p>
                 </div>
               </div>
@@ -148,26 +173,38 @@ export default function Careers() {
       </section>
 
       {/* CTA секция */}
-      <section className="career-cta-area" style={{padding: '80px 0', textAlign: 'center'}}>
+      <section style={{padding: '80px 0', textAlign: 'center'}}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <h2 className="title" style={{marginBottom: '20px'}}>Готовы стать частью нашей команды?</h2>
-              <p style={{fontSize: '1.2rem', marginBottom: '40px', color: '#666'}}>
+              <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: '#333'}}>Готовы стать частью нашей команды?</h2>
+              <p style={{fontSize: '1.2rem', marginBottom: '40px', color: '#666', lineHeight: '1.6'}}>
                 Мы всегда рады талантливым специалистам, которые разделяют наши ценности и стремятся создавать качественные продукты. 
                 Даже если вы не нашли подходящую вакансию - напишите нам!
               </p>
-              <div className="cta-buttons">
-                <Link href="/contact" className="btn btn-primary" style={{
+              <div style={{display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap'}}>
+                <Link href="/contact" style={{
+                  background: '#667eea',
+                  color: 'white',
                   padding: '15px 40px',
+                  borderRadius: '30px',
+                  textDecoration: 'none',
                   fontSize: '1.1rem',
-                  marginRight: '20px'
+                  fontWeight: 'bold',
+                  display: 'inline-block'
                 }}>
                   Написать нам
                 </Link>
-                <a href="mailto:career@nerox.ru" className="btn btn-outline-primary" style={{
+                <a href="mailto:career@nerox.ru" style={{
+                  background: 'transparent',
+                  color: '#667eea',
                   padding: '15px 40px',
-                  fontSize: '1.1rem'
+                  borderRadius: '30px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: 'bold',
+                  border: '2px solid #667eea',
+                  display: 'inline-block'
                 }}>
                   Отправить резюме
                 </a>
