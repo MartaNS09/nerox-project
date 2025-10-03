@@ -1,65 +1,66 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
+import SEO from '../../components/seo';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import { jobListData } from '../../data/joblistData';
 
-export default function Careers() {
+const Careers = () => {
   return (
     <>
+      <SEO pageTitle="Карьера" />
       <Header />
       
-      {/* Hero Section без хлебных крошек */}
-      <section className="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay" 
+      {/* Hero Section - точная копия других страниц */}
+      <section className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay" 
                style={{
-                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg.jpg)',
-                 marginTop: '80px' // Отступ для липкой шапки
+                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg.jpg)'
                }}>
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
               <div className="breadcrumb__content p-relative z-index-1 text-center">
-                <h3 className="breadcrumb__title mb-20">Карьера в NEROX</h3>
-                <p className="breadcrumb__text">
-                  Присоединяйтесь к нашей команде профессионалов и создавайте инновационные digital-решения
-                </p>
+                <h3 className="breadcrumb__title">Карьера в NEROX</h3>
+                <p className="mt-20">Присоединяйтесь к нашей команде профессионалов</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Careers Content */}
-      <section className="services__area pt-120 pb-90">
+      {/* Services Section - стиль как на главной */}
+      <section className="services__area-2 pt-120 pb-90">
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
-              <div className="section__title-wrapper text-center mb-60">
-                <h2 className="section__title">Открытые вакансии</h2>
-                <p>Мы ценим талант, стремимся к развитию и создаем продукты, которые меняют мир к лучшему</p>
+              <div className="section__title-wrapper-2 text-center mb-60">
+                <span className="section__title-pre-2">Вакансии</span>
+                <h3 className="section__title-2">Открытые позиции</h3>
               </div>
             </div>
           </div>
 
-          {/* Job Listings */}
           <div className="row">
             {jobListData.map((job, index) => (
               <div key={index} className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                 <div className="services__item-2 mb-30 transition-3 white-bg">
                   <div className="services__content-2">
+                    <div className="services__icon-2">
+                      <span>💼</span>
+                    </div>
                     <h3 className="services__title-2">
                       <a href="#">{job.title}</a>
                     </h3>
                     <p>{job.subtitle}</p>
-                    <div className="services__features">
+                    <div className="services__list-2">
                       <ul>
-                        <li>💼 {job.subtitle}</li>
                         <li>💰 {job.salary}</li>
                         <li>📍 Удаленная работа</li>
+                        <li>⏱ Опыт от 1 года</li>
                       </ul>
                     </div>
                     <div className="services__btn-2">
                       <a href="#" className="link-btn-2">
-                        Подробнее
+                        Подробнее о вакансии
                         <i className="fal fa-long-arrow-right"></i>
                         <i className="fal fa-long-arrow-right"></i>
                       </a>
@@ -69,17 +70,36 @@ export default function Careers() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* CTA Section */}
+      {/* CTA Section */}
+      <section className="contact__area pt-120 pb-120">
+        <div className="container">
           <div className="row">
             <div className="col-xxl-12">
-              <div className="services__cta text-center mt-60">
-                <h3 className="services__cta-title">Не нашли подходящую вакансию?</h3>
-                <p>Отправьте свое резюме на <strong>hr@nerox.ru</strong> и мы рассмотрим вашу кандидатуру</p>
-                <div className="services__cta-btn mt-30">
-                  <a href="mailto:hr@nerox.ru" className="tp-btn">
-                    Отправить резюме
-                  </a>
+              <div className="section__title-wrapper text-center mb-60">
+                <h2 className="section__title">Не нашли подходящую вакансию?</h2>
+                <p>Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы свяжемся с вами!</p>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-xxl-6 col-xl-6 col-lg-8">
+              <div className="contact__content text-center">
+                <div className="contact__info">
+                  <div className="contact__item d-flex align-items-center mb-20">
+                    <div className="contact__icon mr-15">
+                      <i className="fal fa-envelope"></i>
+                    </div>
+                    <div className="contact__text">
+                      <span>Email</span>
+                      <h5><a href="mailto:hr@nerox.ru">hr@nerox.ru</a></h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="contact__btn mt-40">
+                  <a href="mailto:hr@nerox.ru" className="tp-btn">Отправить резюме</a>
                 </div>
               </div>
             </div>
@@ -90,4 +110,6 @@ export default function Careers() {
       <Footer />
     </>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Careers), { ssr: false });
