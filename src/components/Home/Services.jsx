@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation } from "swiper";
-import servicesData from '../../data/servicesData';
+import servicesData from "../../data/servicesData";
 
 const Services = () => {
   return (
@@ -12,17 +12,28 @@ const Services = () => {
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-10">
               <div className="tpbs-section-wrapper mb-30">
-                <span className="tpbs-sub-title mb-15">Our services</span>
-                <h3 className="tpbs-title">Our service is equipped with <br />the following solutions:</h3>
+                <span className="tpbs-sub-title mb-15">Наши услуги</span>
+                <h3 className="tpbs-title">
+                  Мы предлагаем следующие <br />
+                  решения для вашего бизнеса:
+                </h3>
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 col-md-2">
               <div className="tpbs-nav-wrapper p-relative">
                 <div className="tpbss-arrow-display">
-                  <button type="button" className="tp-swiper-prev swiper-arrow trfrn-arrow-style">
-                    <i className="fa-light fa-chevron-left"></i></button>
-                  <button type="button" className="tp-swiper-next swiper-arrow trfrn-arrow-style">
-                    <i className="fa-light fa-chevron-right"></i></button>
+                  <button
+                    type="button"
+                    className="tp-swiper-prev swiper-arrow trfrn-arrow-style"
+                  >
+                    <i className="fa-light fa-chevron-left"></i>
+                  </button>
+                  <button
+                    type="button"
+                    className="tp-swiper-next swiper-arrow trfrn-arrow-style"
+                  >
+                    <i className="fa-light fa-chevron-right"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -30,11 +41,14 @@ const Services = () => {
           <div className="row mt-25">
             <div className="col-xxl-12">
               <div className="tpbs-services__slider tpbs-services__slider-active">
-
-                <Swiper modules={[Navigation]}
+                <Swiper
+                  modules={[Navigation]}
                   spaceBetween={25}
                   slidesPerView={1}
-                  navigation={{ nextEl: '.tp-swiper-next', prevEl: '.tp-swiper-prev', }}
+                  navigation={{
+                    nextEl: ".tp-swiper-next",
+                    prevEl: ".tp-swiper-prev",
+                  }}
                   autoplay={{ delay: 6000 }}
                   autoHeight={true}
                   breakpoints={{
@@ -55,7 +69,7 @@ const Services = () => {
                     },
                   }}
                 >
-                  {servicesData.map(item => {
+                  {servicesData.map((item) => {
                     return (
                       <SwiperSlide key={item.id}>
                         <div className="tpservices tpservices-tpbs">
@@ -70,17 +84,16 @@ const Services = () => {
                             </h4>
                             <p>{item.text}</p>
                             <div className="tpservices__btn mt-30">
-                              <Link href={`/services/${item.url}`}>More</Link>
+                              <Link href={`/services/${item.url}`}>
+                                Подробнее
+                              </Link>
                             </div>
                           </div>
                         </div>
                       </SwiperSlide>
-                    )
-                  })
-                  }
+                    );
+                  })}
                 </Swiper>
-
-
               </div>
             </div>
           </div>
