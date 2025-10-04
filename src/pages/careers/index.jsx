@@ -1,32 +1,38 @@
-import React from 'react';
-import SEO from '../../components/seo';
-import Header from '../../components/common/Header';
-import Footer from '../../components/common/Footer';
-import { jobListData } from '../../data/joblistData';
-import styles from '../../components/Careers/Careers.module.scss';
+import React from "react";
+import SEO from "../../components/seo";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import { jobListData } from "../../data/joblistData";
+import styles from "../../components/Careers/Careers.module.scss";
 
 const Careers = () => {
   return (
     <div className={styles.careersPage}>
-      <SEO pageTitle="Карьера в NEROX" />
+      <SEO pageTitle="Карьера в APSOD" />
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay" 
-               style={{
-                 backgroundImage: 'url(/assets/img/breadcrumb/breadcrumb-bg-1.jpg)',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center', 
-                 backgroundRepeat: 'no-repeat'
-               }}>
+      <section
+        className="breadcrumb__area include-bg pt-140 pb-140 breadcrumb__overlay"
+        style={{
+          backgroundImage: "url(/assets/img/breadcrumb/breadcrumb-bg-1.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
               <div className="breadcrumb__content text-center p-relative z-index-1">
-                <h3 className="breadcrumb__title">Карьера в NEROX</h3>
+                <h3 className="breadcrumb__title">Карьера в APSOD</h3>
                 <div className="breadcrumb__list">
-                  <span><a href="/">Главная</a></span>
-                  <span className="dvdr"><i className="fa-light fa-colon"></i></span>
+                  <span>
+                    <a href="/">Главная</a>
+                  </span>
+                  <span className="dvdr">
+                    <i className="fa-light fa-colon"></i>
+                  </span>
                   <span className="tp-current">Карьера</span>
                 </div>
               </div>
@@ -46,7 +52,8 @@ const Careers = () => {
                   Мы открыты к сотрудничеству
                 </h3>
                 <p className={styles.sectionSubtitleDark}>
-                  Присоединяйтесь к нашей команде и создавайте инновационные решения вместе с нами
+                  Присоединяйтесь к нашей команде и создавайте инновационные
+                  решения вместе с нами
                 </p>
               </div>
             </div>
@@ -55,23 +62,29 @@ const Careers = () => {
           <div className="row">
             {jobListData.map((job, index) => (
               <div key={index} className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                <div className={`services__item-2 mb-30 transition-3 ${styles.jobCard}`}>
+                <div
+                  className={`services__item-2 mb-30 transition-3 ${styles.jobCard}`}
+                >
                   <div className="services__content-2">
                     <div className="services__icon-2">
                       <span>💼</span>
                     </div>
-                    <h3 className={styles.jobTitle}>
-                      {job.title}
-                    </h3>
+                    <h3 className={styles.jobTitle}>{job.title}</h3>
                     <p className={styles.jobText}>{job.subtitle}</p>
-                    
+
                     <ul className={styles.jobList}>
                       <li className={styles.jobListItem}>📍 {job.subtitle}</li>
-                      <li className={styles.jobListItem}>🚀 Интересные проекты</li>
-                      <li className={styles.jobListItem}>👥 Профессиональная команда</li>
-                      <li className={styles.jobListItem}>📈 Возможности для роста</li>
+                      <li className={styles.jobListItem}>
+                        🚀 Интересные проекты
+                      </li>
+                      <li className={styles.jobListItem}>
+                        👥 Профессиональная команда
+                      </li>
+                      <li className={styles.jobListItem}>
+                        📈 Возможности для роста
+                      </li>
                     </ul>
-                    
+
                     <div className="services__btn-2">
                       <a href="#" className="link-btn-2">
                         Подробнее о вакансии
@@ -93,9 +106,12 @@ const Careers = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="section__title-wrapper text-center mb-60">
-                <h2 className={styles.sectionTitleDark}>Не нашли подходящую вакансию?</h2>
+                <h2 className={styles.sectionTitleDark}>
+                  Не нашли подходящую вакансию?
+                </h2>
                 <p className={styles.sectionSubtitleDark}>
-                  Мы всегда рады талантливым специалистам. Отправьте свое резюме и мы обязательно рассмотрим вашу кандидатуру!
+                  Мы всегда рады талантливым специалистам. Отправьте свое резюме
+                  и мы обязательно рассмотрим вашу кандидатуру!
                 </p>
               </div>
             </div>
@@ -104,13 +120,22 @@ const Careers = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-8">
               <div className="contact__content text-center">
                 <div className="contact__info">
-                  <div className={`contact__item d-flex align-items-center justify-content-center mb-30 ${styles.contactItem}`}>
+                  <div
+                    className={`contact__item d-flex align-items-center justify-content-center mb-30 ${styles.contactItem}`}
+                  >
                     <div className="contact__icon mr-15">
                       <i className="fal fa-envelope"></i>
                     </div>
                     <div className="contact__text text-left">
                       <span>Email для резюме</span>
-                      <h5><a href="mailto:hr@nerox.ru" className={styles.contactEmail}>hr@nerox.ru</a></h5>
+                      <h5>
+                        <a
+                          href="mailto:hr@nerox.ru"
+                          className={styles.contactEmail}
+                        >
+                          hr@nerox.ru
+                        </a>
+                      </h5>
                     </div>
                   </div>
                 </div>
