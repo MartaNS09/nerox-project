@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const AboutArea = () => {
   return (
@@ -8,22 +8,43 @@ const AboutArea = () => {
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-6">
               <div className="tpabout-content-2 pb-50">
-                <h3 className="tpabout-xd-title mb-15"><b>NER</b> CREATIVE</h3>
-                <span className="tpabout-xs-title mb-40">Web development for your business</span>
+                {/* ПЕРЕВОД: NER CREATIVE -> APSOD CREATIVE */}
+                <h3 className="tpabout-xd-title mb-15">
+                  <b>APSOD</b> CREATIVE
+                </h3>
+                {/* ПЕРЕВОД: Web development for your business -> Веб-разработка для вашего бизнеса */}
+                <span className="tpabout-xs-title mb-40">
+                  Веб-разработка для вашего бизнеса
+                </span>
                 <p className="tpab-text">
-                  We are a digital transformation consultancy and software development company that provides cutting edge engineering solutions, helping Fortune 500 companies and enterprise clients untangle complex issues that always emerge during their digital evolution journey. Since 2007 we have been a visionary and a reliable software engineering partner for world-class brands.
+                  {/* ПЕРЕВОД: Мы - компания по цифровой трансформации... */}
+                  Мы - студия веб-разработки, которая предоставляет современные
+                  инженерные решения, помогая компаниям решать сложные задачи на
+                  пути их цифровой трансформации. С 2023 года мы являемся
+                  надежным партнером для бизнеса, стремящегося к цифровому
+                  развитию.
                 </p>
                 <p>
-                  Our mission is to seek and find: growth points, cause-and-effect relationships, promising projects, talented people. We grow together with customers and build our shared success story. We analyze every pixel, byte and character. Sifting business models and solutions through a sieve of common sense. We say everything as it is.
+                  {/* ПЕРЕВОД: Наша миссия - искать и находить... */}
+                  Наша миссия - находить точки роста, причинно-следственные
+                  связи, перспективные проекты и талантливых людей. Мы растем
+                  вместе с клиентами и создаем нашу общую историю успеха. Мы
+                  анализируем каждый пиксель, байт и символ, просеивая
+                  бизнес-модели и решения через сито здравого смысла. Мы говорим
+                  все как есть.
                 </p>
                 <div className="tpabout-btn mt-50">
-                  <Link href="/contact"><a className="tp-solid-btn">Contact us</a></Link>
+                  {/* ПЕРЕВОД: Contact us -> Связаться с нами */}
+                  <Link href="/contact">
+                    <a className="tp-solid-btn">Связаться с нами</a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6">
               <div className="tpabout-image-2 pb-50">
-                <img src="assets/img/about/tpabout-img.jpg" alt="about-img" />
+                {/* ДОБАВИТЬ СЛЕШ: assets -> /assets */}
+                <img src="/assets/img/about/tpabout-img.jpg" alt="about-img" />
               </div>
             </div>
           </div>
