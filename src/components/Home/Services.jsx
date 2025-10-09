@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation } from "swiper";
+import { Navigation } from "swiper/modules";
 import servicesData from "../../data/servicesData";
 
 const Services = () => {
@@ -79,7 +79,7 @@ const Services = () => {
                           <div className="tpservices__content">
                             <h4 className="tpservices__title mb-15">
                               <Link href={`/services/${item.url}`}>
-                                <a>{item.title}</a>
+                                {item.title}
                               </Link>
                             </h4>
                             <p>{item.text}</p>

@@ -49,7 +49,6 @@ const Header = ({
                 <div className="col-xxl-3 col-xl-2 col-lg-2 col-md-6 col-6">
                   <div className="logo-dark">
                     <Link href="/">
-                      <a>
                         {headerSticky ? (
                           <>
                             {dynamic && (
@@ -78,12 +77,10 @@ const Header = ({
                             alt="logo"
                           />
                         )}
-                      </a>
                     </Link>
                   </div>
                   <div className="logo-white">
                     <Link href="/">
-                      <a>
                         <img
                           src={
                             dynamic
@@ -92,7 +89,6 @@ const Header = ({
                           }
                           alt="logo"
                         />
-                      </a>
                     </Link>
                   </div>
                 </div>

@@ -66,9 +66,7 @@ const About = () => {
                   </ul>
                 </div>
                 <div className="tpbs-button mt-50">
-                  <Link href="/about">
-                    <a className="tp-solid-btn">Обсудить проект</a>
-                  </Link>
+                  <Link href="/about" className="tp-solid-btn">Обсудить проект</Link>
                 </div>
               </div>
             </div>

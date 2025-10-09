@@ -173,7 +173,7 @@ const Footer = () => {
               <div className="col-xl-6 col-lg-5">
                 <div className="copyright-links">
                   <Link href="/privacy">
-                    <a>Политика конфиденциальности</a>
+                    Политика конфиденциальности
                   </Link>
                 </div>
               </div>

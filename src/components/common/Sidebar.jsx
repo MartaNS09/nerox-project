@@ -100,17 +100,13 @@ const Sidebar = ({ headerMenu, dynamic }) => {
                 <ul>
                   <div className="single_link iconAdd">
                     <li onClick={() => setShowSidebar(false)}>
-                      <Link href="/home">
-                        <a>Главная</a>
-                      </Link>
+                      <Link href="/home">Главная</Link>
                     </li>
                   </div>
 
                   <div className="single_link iconAdd">
                     <li onClick={() => setShowSidebar(false)}>
-                      <Link href="/about">
-                        <a>О нас</a>
-                      </Link>
+                      <Link href="/about">О нас</Link>
                     </li>
                   </div>
 
@@ -137,17 +133,13 @@ const Sidebar = ({ headerMenu, dynamic }) => {
 
                   <div className="single_link iconAdd">
                     <li onClick={() => setShowSidebar(false)}>
-                      <Link href="/blog">
-                        <a>Блог</a>
-                      </Link>
+                      <Link href="/blog">Блог</Link>
                     </li>
                   </div>
 
                   <div className="single_link iconAdd">
                     <li onClick={() => setShowSidebar(false)}>
-                      <Link href="/careers">
-                        <a>Вакансии</a>
-                      </Link>
+                      <Link href="/careers">Вакансии</Link>
                     </li>
                   </div>
                 </ul>

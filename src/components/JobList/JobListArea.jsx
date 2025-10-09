@@ -11,15 +11,11 @@ const JobListArea = () => {
               <div className="row">
                 <div className="col-xxl-8 col-xl-7 col-lg-6">
                   <h5 className="job-list-title mb-30">
-                    <Link href={`/careers/${item.url}`}>
-                      <a>{item.title}</a>
-                    </Link>
+                    <Link href={`/careers/${item.url}`}>{item.title}</Link>
                   </h5>
                   <span className="job-name">{item.subtitle}</span>
                   <span className="job-state mt-100">
-                    <Link href={`/careers/${item.url}`}>
-                      <a>Проектная работа</a>
-                    </Link>
+                    <Link href={`/careers/${item.url}`}>Проектная работа</Link>
                   </span>
                 </div>
                 <div className="col-xxl-4 col-xl-5 col-lg-6">
@@ -28,8 +24,11 @@ const JobListArea = () => {
                     <br /> от {item.salary}
                   </h5>
                   <div className="job-btn mt-40">
-                    <Link href={`/careers/${item.url}`}>
-                      <a className="tp-solid-btn-square">Откликнуться</a>
+                    <Link
+                      href={`/careers/${item.url}`}
+                      className="tp-solid-btn-square"
+                    >
+                      Откликнуться
                     </Link>
                   </div>
                 </div>

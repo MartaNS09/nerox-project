@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Pagination = () => {
   return (
@@ -11,7 +11,7 @@ const Pagination = () => {
               <ul>
                 <li>
                   <Link href="/portfolio">
-                    <a><i className="fa-solid fa-arrow-left-long"></i></a>
+                    <i className="fa-solid fa-arrow-left-long"></i>
                   </Link>
                 </li>
                 <li>
@@ -30,7 +30,7 @@ const Pagination = () => {
                 </li>
                 <li>
                   <Link href="/portfolio">
-                    <a><i className="fa-solid fa-arrow-right-long"></i></a>
+                      <i className="fa-solid fa-arrow-right-long"></i>
                   </Link>
                 </li>
               </ul>

@@ -1,20 +1,26 @@
-import CookieConsent from '../components/CookieConsent/CookieConsent';
-import { ThemeProvider } from 'next-themes';
-import AppProvider from '../context/AppContext';
-import '../index.scss';
-if (typeof window !== "undefined") {
-  require("bootstrap/dist/js/bootstrap");
-}
+"use client";
+import CookieConsent from "../components/CookieConsent/CookieConsent";
+import { ThemeProvider } from "next-themes";
+import AppProvider from "../context/AppContext";
+import "../index.scss";
+import { useEffect } from "react";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+  useEffect(() => {
+    // Загружаем bootstrap только на клиенте
+    if (typeof window !== "undefined") {
+      import("bootstrap/dist/js/bootstrap");
+    }
+  }, []);
+
   return (
-    <ThemeProvider defaultTheme='light'>
+    <ThemeProvider defaultTheme="light">
       <AppProvider>
         <Component {...pageProps} />
         <CookieConsent />
       </AppProvider>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

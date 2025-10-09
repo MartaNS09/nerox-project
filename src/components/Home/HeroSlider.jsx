@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Pagination, EffectFade } from "swiper";
+import { Pagination, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const HeroSlider = () => {
@@ -74,10 +74,8 @@ const HeroSlider = () => {
                               {item.subtitle}
                             </h3>
                             <div className="tpbs-btn mt-40">
-                              <Link href="/contact">
-                                <a className="tp-solid-btn">
+                              <Link href="/contact" className="tp-solid-btn">
                                   Бесплатная консультация
-                                </a>
                               </Link>
                             </div>
                           </div>

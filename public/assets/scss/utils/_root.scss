@@ -1,3 +1,4 @@
+// public/assets/scss/utils/_root.scss
 @use 'colors' as *;
 @use 'typography' as *;
 
@@ -7,7 +8,7 @@
     */
     @each $ff, $shades in $font-family {
         @each $shade, $value in $shades {
-            --tp-#{$ff}-#{$shade}: #{$value};
+            --tp-#{"#{"" + $ff}"}-#{"#{"" + $shade}"}: #{$value}; // <-- Обход
         }
     }
 
@@ -16,28 +17,25 @@
     */
     @each $color, $shades in $colors {
         @each $shade, $value in $shades {
-            --tp-#{$color}-#{$shade}: #{$value};
+            --tp-#{"#{"" + $color}"}-#{"#{"" + $shade}"}: #{$value}; // <-- Обход
         }
     }
-
 
     /**
     @font weight declaration
     */
-    
     @each $fw, $shades in $font-scale {
         @each $shade, $value in $shades {
-            --tp-#{$fw}-#{$shade}: #{$value};
+            --tp-#{"#{"" + $fw}"}-#{"#{"" + $shade}"}: #{$value}; // <-- Обход
         }
     }
 
     /**
     @font size declaration
     */
-    
     @each $fz, $shades in $font-size {
         @each $shade, $value in $shades {
-            --tp-#{$fz}-#{$shade}: #{$value};
+            --tp-#{"#{"" + $fz}"}-#{"#{"" + $shade}"}: #{$value}; // <-- Обход
         }
     }
 }

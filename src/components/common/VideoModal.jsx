@@ -1,4 +1,4 @@
-import { Modal } from "react-bootstrap";
+import Modal from 'react-bootstrap/Modal';
 
 const VideoModal = ({ show, handleClose, videoId = "oMhby921Ux4" }) => {
   return (

@@ -19,9 +19,7 @@ const Blog = () => {
                   <div className="tpblog mb-30">
                     <div className="tpblog__thumb mb-30">
                       <Link href={`/blog/blogs/${item.id}`}>
-                        <a>
-                          <img src={item.img} alt="blog" />
-                        </a>
+                        <img src={item.img} alt="blog" />
                       </Link>
                     </div>
                     <div className="tpblog__content">
@@ -33,7 +31,7 @@ const Blog = () => {
                       </div>
                       <h5 className="tpblog__title">
                         <Link href={`/blog/blogs/${item.id}`}>
-                          <a>{item.title}</a>
+                          {item.title}
                         </Link>
                       </h5>
                     </div>
@@ -43,8 +41,8 @@ const Blog = () => {
             })}
             <div className="col-xl-12">
               <div className="tpbs-blog-button text-center mt-30">
-                <Link href="/blog">
-                  <a className="tp-solid-btn">Все статьи</a>
+                <Link href="/blog" className="tp-solid-btn">
+                  Все статьи
                 </Link>
               </div>
             </div>
