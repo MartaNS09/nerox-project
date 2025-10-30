@@ -148,29 +148,16 @@ const Header = ({
                             {headerSticky ? (
                               <label className="label" htmlFor="chk">
                                 <i
-                                  onClick={() => setTheme("dark")}
-                                  className="fas fa-sun tp-dark-icon setColor dark theme__switcher-btn"
-                                  data-theme="dark"
-                                ></i>
-                                <i
-                                  onClick={() => setTheme("light")}
-                                  className="fas fa-moon tp-light-icon setColor light theme__switcher-btn"
-                                  data-theme="light"
+                                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                  className={`fas ${theme === "dark" ? "fa-sun" : "fa-moon"} theme__switcher-btn`}
                                 ></i>
                               </label>
                             ) : (
                               <label className="label" htmlFor="chk">
                                 <i
                                   style={{ color: "white" }}
-                                  onClick={() => setTheme("dark")}
-                                  className="fas fa-sun tp-dark-icon setColor dark theme__switcher-btn"
-                                  data-theme="dark"
-                                ></i>
-                                <i
-                                  style={{ color: "white" }}
-                                  onClick={() => setTheme("light")}
-                                  className="fas fa-moon tp-light-icon setColor light theme__switcher-btn"
-                                  data-theme="light"
+                                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                  className={`fas ${theme === "dark" ? "fa-sun" : "fa-moon"} theme__switcher-btn`}
                                 ></i>
                               </label>
                             )}
@@ -198,29 +185,16 @@ const Header = ({
                               {headerSticky ? (
                                 <label className="label" htmlFor="chk">
                                   <i
-                                    onClick={() => setTheme("dark")}
-                                    className="fas fa-sun tp-dark-icon setColor dark theme__switcher-btn"
-                                    data-theme="dark"
-                                  ></i>
-                                  <i
-                                    onClick={() => setTheme("light")}
-                                    className="fas fa-moon tp-light-icon setColor light theme__switcher-btn"
-                                    data-theme="light"
+                                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                    className={`fas ${theme === "dark" ? "fa-sun" : "fa-moon"} theme__switcher-btn`}
                                   ></i>
                                 </label>
                               ) : (
                                 <label className="label" htmlFor="chk">
                                   <i
                                     style={{ color: "white" }}
-                                    onClick={() => setTheme("dark")}
-                                    className="fas fa-sun tp-dark-icon setColor dark theme__switcher-btn"
-                                    data-theme="dark"
-                                  ></i>
-                                  <i
-                                    style={{ color: "white" }}
-                                    onClick={() => setTheme("light")}
-                                    className="fas fa-moon tp-light-icon setColor light theme__switcher-btn"
-                                    data-theme="light"
+                                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                    className={`fas ${theme === "dark" ? "fa-sun" : "fa-moon"} theme__switcher-btn`}
                                   ></i>
                                 </label>
                               )}
